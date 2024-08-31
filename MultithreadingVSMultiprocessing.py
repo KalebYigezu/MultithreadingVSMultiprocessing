@@ -55,3 +55,32 @@ if __name__ == '__main__':
     p2.join()
 
     print("Done")
+------------------------------------------------------------------------------------------
+import time
+import multiprocessing
+
+
+square_result = []
+
+def calc_square(numbers):
+    global square_result
+    for n in numbers:
+        print('Square ' + str(n * n))
+        square_result.append(n * n)
+    print("Within a process Result : ", str(square_result))
+
+
+if __name__ == '__main__':
+    arr = [2, 3, 8, 9]
+    p1 = multiprocessing.Process(target=calc_square, args=(arr,))
+
+    p1.start()
+    p1.join()
+
+    print("Not within Result : ",str(square_result))
+    print("Done")
+
+
+
+''' The main difference between Multithreading and Multiprocess is in the case of Myltiprocessing every process has its own address space. Program variables
+are not shared between two processes. We need to use IPC(interprocess communication techniques) to share data between two processes. '''
