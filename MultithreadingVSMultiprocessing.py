@@ -82,5 +82,6 @@ if __name__ == '__main__':
 
 
 
-''' The main difference between Multithreading and Multiprocess is in the case of Myltiprocessing every process has its own address space. Program variables
-are not shared between two processes. We need to use IPC(interprocess communication techniques) to share data between two processes. '''
+''' The main difference between Multithreading and Multiprocess is in the case of Multiprocessing
+every process has its own address space. Program variables are not shared between two processes. 
+We need to use IPC(interprocess communication techniques) to share data between two processes. '''
